@@ -1,0 +1,80 @@
+///install capacitor tools
+npm install capacitor-resources -g
+///copy files iocn.png and splsh.png to resources
+///run for generate resources
+capacitor-resources
+///build android
+npm run build
+npx cap add android     //if need to add platform requerired
+npx cap sync
+
+npx cap copy android
+npx cap open android
+
+
+//se egeneran los pslash e iconos menos los foregroudn
+//en andorid studio app/res, anticlick new>imageasset
+//la imagen del logo no tiene que ser transaprencia sino genera con fondo verde en android studio para capacitor
+//click en save pero esacalar un poco para que quede  //click en main y save
+
+//se uso este utorial para firebase integracion
+https://enappd.com/blog/firebase-phone-authentication-in-ionic-5-apps/169/
+//hay dependencias qe no funcionan requieren el compat en las urls
+import firebase from 'firebase/compat/app';
+
+///////how to set custom pslash screen
+https://www.kodeco.com/32555180-splash-screen-tutorial-for-android
+
+// ruta adobe xd
+https://xd.adobe.com/view/8c9e7747-5717-4b53-a851-f8d902be59ca-d9cd/screen/8628bfa5-494d-4f26-b41f-0b23176533d8/
+
+angular.json
+            "./node_modules/uikit/dist/css/uikit.min.css",
+            "./node_modules/uikit/dist/css/uikit-core.min.css",
+            "./node_modules/uikit/dist/js/uikit.min.js",
+            "./node_modules/uikit/dist/js/uikit-icons.min.js",
+
+//change remote git remote set-url origin https://FrankRodriguezMrRobot@bitbucket.org/camposcralex/apparka.git
+
+//ACTUALIZAR IONIC capacitor
+npm i -D @capacitor/cli@latest
+npx cap migrate
+
+//USAR CORDOVA RES
+cordova-res android --skip-config --copy
+cordova-res android --skip-config --icon-background-source '#EA524F' --copy
+#EA524F
+//estructura cordova res
+resources/
+├── android
+|   ├── icon-background.png
+|   └── icon-foreground.png
+├── icon.png
+└── splash.png
+config.xml
+
+//GENERAR FIRMA
+com.controlparkingsmart.app
+
+keytool -genkey -v -keystore controlparkingsmart.jks -keyalg RSA -keysize 2048 -validity 10000 -alias controlparkingsmart
+
+CLAVE: Parking2023@
+
+//listar almacen de claves
+keytool -list -v -keystore controlparkingsmart.jks -alias controlparkingsmart -storepass Parking2023@ -keypass Parking2023@
+
+
+
+
+///////AUTEHNTHICACIO  CON GOOGLE Y CON FACEBOOK
+https://www.youtube.com/watch?v=yjLHnGTVpS4
+https://github.com/CodetrixStudio/CapacitorGoogleAuth/issues/220    //xk no funciona con andoidclient id
+
+//ISNTALCIND DE FACEBOOK
+https://www.youtube.com/watch?v=KCTuMuJxaBc
+https://github.com/capacitor-community/facebook-login
+--completar con ambos 
+--requiere path y pathfile
+
+//como desactivar campos del form glue embed
+https://secure.micuentaweb.pe/doc/es-PE/rest/V4.0/api/playground/Subscription/Update#transactionOptions.cardOptions.firstInstallmentDelay
