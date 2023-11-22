@@ -11,6 +11,7 @@ import ListDetail from './pages/ListDetail';
 import Settings from './pages/Settings';
 import Tabs from './pages/Tabs';
 import LoginPage from './pages/Login/LoginPage';
+import HomePage from './pages/Home/HomePage';
 
 setupIonicReact({});
 
@@ -29,6 +30,7 @@ const AppShell = () => {
         <IonRouterOutlet id="main">
           <Route path="/tabs" render={() => <Tabs />} />
           <Route path="/login" render={() => <LoginPage />} />
+          <Route path="/home" render={() => <HomePage />} />
           {/* <Route path="/" render={() => <Redirect to="/tabs/feed" />} exact={true} /> */}
           <Route path="/" render={() => <Redirect to="/login" />} exact={true} />
         </IonRouterOutlet>

@@ -1,10 +1,12 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 
 interface LoginFormProps {
   onSubmit: (username: string, password: string) => void;
 }
 
 const LoginFormComponent: React.FC<LoginFormProps> = ({ onSubmit }) => {
+  const history = useHistory();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -19,6 +21,7 @@ const LoginFormComponent: React.FC<LoginFormProps> = ({ onSubmit }) => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     onSubmit(username, password);
+    history.push('/home');
   };
 
   return (
